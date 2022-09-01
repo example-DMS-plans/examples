@@ -23,8 +23,8 @@ usethis::edit_r_environ() # run this to open your .Renviron file
 gargle:::secret_write(
     package = "gargle", 
     name = "gs4-auth.token", 
-    input = token_file
+    input = file.path(".secrets/", token_file)
 )
 
 # check that the token can be decrypted
-stopifnot(!is.null(get_gs4_token()))
+stopifnot(!is.null(decrypt_gs4_token()))

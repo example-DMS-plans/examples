@@ -13,9 +13,16 @@ output:
 library(tidyverse)
 library(DT)
 
+source("data_functions.R")
+
 if (!file.exists("plans_data.RDS"))
 {
-    source("get_data.R")
+    # grab data from google sheets
+    download_raw_data()
+    
+    # read in raw data, process and save out
+    plans_data <- process_raw_data()
+    saveRDS(plans_data, "plans_data.RDS")
 }
 
 plans_data <- readRDS("plans_data.RDS")
