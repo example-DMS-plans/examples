@@ -4,5 +4,6 @@
 .Ruserdata
 raw_data.RDS
 plans_data.RDS
+token.RDS
 .Renviron
 .secrets
