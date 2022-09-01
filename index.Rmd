@@ -1,0 +1,36 @@
+---
+title: "Example DMS Plans"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+    theme: spacelab
+    social: menu
+    source_code: https://github.com/UFHSCL/collection-comparison/blob/main/index.Rmd
+---
+
+```{r setup, include = FALSE, eval = FALSE}
+library(tidyverse)
+library(DT)
+
+if (!file.exists("plans_data.RDS"))
+{
+    source("get_data.R")
+}
+
+plans_data <- readRDS("plans_data.RDS")
+```
+
+
+Example Plans {data-navmenu="Data Tables"}
+=====================================
+
+Column {data-width=800}
+-----------------------------------------------------------------------
+
+```{r, eval = FALSE}
+datatable(plans_data, 
+          rownames = FALSE, 
+          options = list(pageLength = NROW(plans_data), 
+                         scrollY = "800px"))
+```
