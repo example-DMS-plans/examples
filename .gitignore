@@ -3,4 +3,5 @@
 .RData
 .Ruserdata
 raw_data.RDS
+plans_data.RDS
 .Renviron
