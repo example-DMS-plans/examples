@@ -1,6 +1,8 @@
 library(tidyverse)
 library(googlesheets4)
 
+# options(gargle_verbosity = "debug")
+
 get_data_url <- function()
 {
     DATA_URL <- Sys.getenv("DATA_URL", unset = NA)
@@ -12,10 +14,11 @@ get_data_url <- function()
 }
 
 download_raw_data <- function(DATA_URL = get_data_url(), 
+                              token = get_gs4_token(), 
                               file_out = "raw_data.RDS")
 {
     gs4_deauth()
-    gs4_auth(token = get_gs4_token())
+    gs4_auth(token = token)
     dat <- read_sheet(DATA_URL, col_types = "c")
     saveRDS(dat, file_out)
 }

@@ -5,11 +5,11 @@ options(gargle_oauth_cache = ".secrets")
 gargle::gargle_oauth_cache()
 
 # create a new token
-drive_auth(scopes = "https://www.googleapis.com/auth/spreadsheets.readonly")
+drive_auth(email = TRUE, scopes = "https://www.googleapis.com/auth/spreadsheets.readonly")
 
 # check that a new token was created
 list.files(".secrets/")
-token_file <- list.files(".secrets/")[1]
+token_file <- file.path(".secrets", list.files(".secrets/")[1])
 
 # setup encryption key
 pw_name <- gargle:::secret_pw_name("gargle")
@@ -23,7 +23,7 @@ usethis::edit_r_environ() # run this to open your .Renviron file
 gargle:::secret_write(
     package = "gargle", 
     name = "gs4-auth.token", 
-    input = file.path(".secrets/", token_file)
+    input = token_file
 )
 
 # check that the token can be decrypted
