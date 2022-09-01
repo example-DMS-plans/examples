@@ -38,6 +38,7 @@ jobs:
 
       - name: Build site
         run: |
+          source("test-env-vars.R")
           rmd_files <- list.files(pattern = ".Rmd$")
           purrr::walk(rmd_files, rmarkdown::render)
         shell: Rscript {0}
