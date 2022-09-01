@@ -1,13 +1,8 @@
 source("data_functions.R")
 
-if (!exists("DATA_URL"))
-{
-    DATA_URL <- Sys.getenv("DATA_URL")
-}
-
 # grab data from google sheets
-download_raw_data(DATA_URL)
+download_raw_data()
 
 # read in raw data, process and save out
 plans_data <- process_raw_data()
-saveRDS(plans_data, "plans_data.Rdata")
+saveRDS(plans_data, "plans_data.RDS")
