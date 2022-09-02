@@ -6,6 +6,7 @@ output:
     vertical_layout: fill
     theme: spacelab
     social: menu
+    css: custom.css
     source_code: https://github.com/example-DMS-plans/examples/blob/main/index.Rmd
 ---
 
