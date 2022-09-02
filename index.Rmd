@@ -6,6 +6,7 @@ output:
     vertical_layout: fill
     theme: spacelab
     social: menu
+    css: custom.css
     source_code: https://github.com/example-DMS-plans/examples/blob/main/index.Rmd
 ---
 
@@ -27,10 +28,6 @@ if (!file.exists("plans_data.RDS"))
 
 plans_data <- readRDS("plans_data.RDS")
 ```
-
-
-Example Plans {data-navmenu="Data Tables"}
-=====================================
 
 Column {data-width=800}
 -----------------------------------------------------------------------
