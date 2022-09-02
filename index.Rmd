@@ -28,10 +28,6 @@ if (!file.exists("plans_data.RDS"))
 plans_data <- readRDS("plans_data.RDS")
 ```
 
-
-Example Plans {data-navmenu="Data Tables"}
-=====================================
-
 Column {data-width=800}
 -----------------------------------------------------------------------
 
