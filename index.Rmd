@@ -2,7 +2,6 @@
 title: "Example DMS Plans"
 output: 
   flexdashboard::flex_dashboard:
-    orientation: columns
     vertical_layout: fill
     theme: spacelab
     social: menu
@@ -29,12 +28,23 @@ if (!file.exists("plans_data.RDS"))
 plans_data <- readRDS("plans_data.RDS")
 ```
 
-Column {data-width=800}
------------------------------------------------------------------------
+The example DMP directory was compiled from researchers, institutions, libraries and workgroups who shared their data management plans online from 2012-2022.<br />
+This directory is intended to help researchers comply with the new NIH policy and will not be updated after publishing.
 
 ```{r}
-datatable(plans_data, 
-          rownames = FALSE, 
-          options = list(pageLength = NROW(plans_data), 
-                         scrollY = "800px"))
+plans_data %>%
+    datatable(rownames = FALSE, 
+              options = list(pageLength = NROW(plans_data), 
+                             scrollY = "800px", 
+                             columnDefs = list(list(
+                                 targets = 6,
+                                 render = JS(
+                                     "function(data, type, row, meta) {",
+                                     "if (type === 'display') {",
+                                     "data = '<a href=\"' + data + '\">' + 'link' + '</a>';",
+                                     "}", 
+                                     "return data;", 
+                                     "}")
+                             )))
+    )
 ```
