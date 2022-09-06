@@ -6,6 +6,8 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
+Created in association with Working Group to Create Guidance Materials for NIH Data Management and Sharing Plans.
+
 The example DMP directory was compiled from researchers, institutions,
 libraries and workgroups who shared their data management plans online
 from 2012-2022. This directory is intended to help researchers comply
