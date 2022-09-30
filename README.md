@@ -7,6 +7,7 @@
 <!-- badges: end -->
 
 Created in association with Working Group to Create Guidance Materials for NIH Data Management and Sharing Plans.
+For more information, please visit [our OSF project](https://osf.io/uadxr/).
 
 The example DMP directory was compiled from researchers, institutions,
 libraries and workgroups who shared their data management plans online
