@@ -32,12 +32,6 @@ if (!file.exists("plans_data.RDS"))
 plans <- readRDS("plans_data.RDS")
 ```
 
-```{r process data, include = FALSE}
-plans <- plans %>%
-    mutate_at("Date", parse_date_time, c("mdy", "y")) %>%
-    mutate_at("Date", as.Date)
-```
-
 The example DMP directory was compiled from researchers, institutions, libraries and workgroups who shared their data management plans online from 2012-2022.<br />
 This directory is intended to help researchers comply with the new NIH policy and will not be updated after publishing.
 
