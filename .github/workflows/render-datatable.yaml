@@ -8,7 +8,7 @@ name: flexdashboard
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: macOS-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       DATA_URL: ${{ secrets.DATA_URL}}
