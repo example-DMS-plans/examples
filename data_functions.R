@@ -1,4 +1,3 @@
-library(tidyverse)
 library(googlesheets4)
 
 # options(gargle_verbosity = "debug")
